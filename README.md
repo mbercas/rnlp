@@ -12,3 +12,24 @@ At some stage I will compare the performance of my functions to those in the NLP
  - Generate documentation from code
 ### Caution
 I make this repository public in case anyone is interested, but please be aware that for the time being I am at very early stages of Rust learning and things may be done in not exacly the best way.
+
+## Learning links
+
+The (https://doc.rust-lang.org/book/)[Rust Book].
+
+### Dictionary of terms
+
+ - *Monomorphization* is the process of turning /generic code/ that
+ is using generics at compile time by filling in the concrete types
+ that are used when compiled.
+ - *Variant* one of the possible values an Enum can take
+
+Comming from C/C++ world some Rust contructs have different
+names in C++; some concepts are not the same.
+
+| *Rust*        | *C++*          |
+|---------------|----------------|
+| Method        | Method         |
+| Struct        | Struct / Class |
+| Generic Types | Templates      |
+|               |                |
