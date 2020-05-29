@@ -18,13 +18,30 @@ pub struct WordToken {
     pub word: String,
 }
 
+/// Returns a word token containing the string passed
+/// as reference and the indexes whithing the sentence
+///
+/// # Arguments
+///
+///  * word - reference to a string containing the word.
+///  * start - index of the first letter of word in the sentence
+///  * end - index of the last lettre of word in the sentence
+///
+/// # Returns Result<WordToken>
+///
+/// If the distance between the indexes does not match the
+/// length of the word returns
+///
 impl WordToken {
-    pub fn from(word: &str, start: usize, end: usize) -> WordToken{
-        WordToken {
-            word: String::from(word.to_lowercase()),
-            start,
-            end,
+    pub fn from(word: &str, start: usize, end: usize) -> Result<WordToken, &str> {
+        if end - start != word.len() {
+            Err("Length of word does not match distance between indexes")
+        } else {
+            Ok(WordToken {
+                word: String::from(word.to_lowercase()),
+                start,
+                end,
+            })
         }
     }
 }
-
